@@ -1,5 +1,6 @@
 import DisplayEmployee from './components/DisplayEmployee';
 import './App.css'
+import axios from 'axios';
 
 const sampleEmployee = {
   gender: 'male',
@@ -22,10 +23,11 @@ const sampleEmployee = {
 };
 
 function App() {
-
+  const [employee, setEmployee] = useState(sampleEmployee);
   return (
     <>
-      <DisplayEmployee employee = {sampleEmployee} />
+      <DisplayEmployee employee = {employee} />
+      <button type="button" onClick={getEmployee}>Get employee</button>
     </>
   )
 }
